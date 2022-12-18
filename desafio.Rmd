@@ -6251,3 +6251,31 @@ ggplot(diesel_sem_br, aes(y =  `2020`, x = meses, fill = regiao)) +
   geom_bar(stat = "identity")
 ```
 
+```{r}
+
+gasolina_sem_br <-
+gasolina %>% 
+  select(`2020`, meses, regiao) %>%  
+  filter(!(regiao =="br"))
+ 
+
+
+ggplot(gasolina_sem_br, aes(y =  `2020`, x = meses, fill = regiao)) +
+  scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10,11,12))+
+  geom_bar(stat = "identity")
+```
+
+```{r}
+etanol_sem_br <-
+etanol %>% 
+  select(`2020`, meses, regiao) %>%  
+  filter(!(regiao =="br"))
+ 
+
+
+ggplot(etanol_sem_br, aes(y =  `2020`, x = meses, fill = regiao)) +
+  scale_x_continuous(breaks = c(1,2,3,4,5,6,7,8,9,10,11,12))+
+  geom_bar(stat = "identity")
+```
+
+
